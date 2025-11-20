@@ -2,17 +2,17 @@
 
 class Transfer
 {
+    private TransferDirection $direction;
+    private TransferState $state;
     /** @var array<TransferEvent> */
     private $events = [];
-    private TransferDirection $direction;
 
-    public function __construct($events, $direction)
+    public function __construct($direction)
     {
-        $this->events = $events;
         $this->direction = $direction;
+        $this->state = TransferState::DRAFT;
+        $this->events = [];
     }
-
-    // TODO : implement nextReminder calculation
     
 }
 
